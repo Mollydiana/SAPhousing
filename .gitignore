@@ -58,5 +58,5 @@ target/
 .idea/
 staticfiles
 local_settings.py
-settings.py
+
 
