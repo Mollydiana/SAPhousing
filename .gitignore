@@ -53,10 +53,10 @@ docs/_build/
 # PyBuilder
 target/
 
-
 #HEROKU FILES TO IGNORE#
 *.pyc
 .idea/
 staticfiles
 local_settings.py
 settings.py
+
