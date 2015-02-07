@@ -53,6 +53,8 @@ ROOT_URLCONF = 'sap_renter.urls'
 
 WSGI_APPLICATION = 'sap_renter.wsgi.application'
 
+AUTH_USER_MODEL = 'video_tenant.People'
+
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
