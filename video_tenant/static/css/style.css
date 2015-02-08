@@ -1,0 +1,19 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400);
+@import url(http://fonts.googleapis.com/css?family=Abril+Fatface);
+
+body {
+  background-color:#e0e0e0;
+  -webkit-font-smoothing: antialiased;
+  font: normal 14px Roboto,arial,sans-serif;
+}
+
+
+/* Bryan's random styling!!!!! */
+
+#main {
+  margin-top: 60px;
+}
+
+.navbar-default {
+background-color: #EFED72 !IMPORTANT;
+}
