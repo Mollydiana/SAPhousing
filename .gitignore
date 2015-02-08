@@ -56,8 +56,7 @@ target/
 #HEROKU FILES TO IGNORE#
 *.pyc
 .idea/
-static/
-staticfiles
+media/
 local_settings.py
 
 
