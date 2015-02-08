@@ -23,6 +23,8 @@ urlpatterns = patterns('',
 
 
     # other stuff
+    url(r'^rental/$', 'video_tenant.views.rental', name='rental'),
+    url(r'^view-rental/(?P<rental_id>\d+)$','video_tenant.views.view_rental', name='view_rental'),
 )
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
