@@ -1,0 +1,31 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+    <div class="col-sm-12 text-center">
+    <hr>
+    <h1>My Account </h1>
+    <hr>
+    </div>
+<div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">account information</div>
+        <div class="panel-body">
+            <form method="post" action="">
+            {% csrf_token %}
+                {{ account_form.as_p }}
+            <button class="btn btn-xl" type="submit">update</button>
+            <br>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">other information</div>
+        <div class="panel-body">
+        </div>
+    </div>
+</div>
+{% endblock %}
+

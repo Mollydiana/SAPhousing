@@ -1,0 +1,25 @@
+{% extends "base_template.html" %}
+
+{% block content %}
+<div class="col-sm-offset-3 col-sm-6">
+    <div class="panel panel-default text-center">
+      <div class="panel-heading"><h3>Login</h3></div>
+        <div class="panel-body">
+            <form method="post" action="">
+            {% csrf_token %}
+            {{ form.username }}
+            <br>
+
+            {{ form.password }}
+            <br>
+
+            <button class="btn btn-xl" type="submit">login</button>
+            <br>
+            <br>
+            <p>Not member? <a href="{% url 'register' %}">Register!</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
