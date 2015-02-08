@@ -37,6 +37,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # 3rd party
+    'geoposition',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -53,7 +56,9 @@ ROOT_URLCONF = 'sap_renter.urls'
 
 WSGI_APPLICATION = 'sap_renter.wsgi.application'
 
-AUTH_USER_MODEL = 'video_tenant.People'
+AUTH_USER_MODEL = 'video_tenant.Account'
+LOGIN_REDIRECT_URL = 'account'
+LOGIN_URL = 'login'
 
 
 # Database
@@ -84,6 +89,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, "static", *MEDIA_URL.strip("/").split("/"))
 
 try:
     from local_settings import *
