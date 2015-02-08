@@ -8,18 +8,48 @@ $( document ).ready(function() {
 
     console.log(endpointId);
 
+
+
+
     // Create the client object using the App ID
     var client = respoke.createClient({
         appId: appid,
         developmentMode: true
     });
 
+//        l);
+//        console.log(recipientEndpoint);
+
     client.connect({
         endpointId: endpointId, // your username is the endpoint
-        presence: 'available'
+        presence: 'available',
+        onConnect: function() {
+            console.log('Connected: ' + client.getPresence());
+        }
     });
 
+    function setPresence( presence ){
+        client.setPresence({
+            presence: presence,
+            onSuccess: function(data){
+                console.log("here works");
+            }
+        });
+    }
+
+
+    console.log("my login");
+    console.log(client);
+
+    var recipientId = "respoke-admin";
+        console.log(recipientId);
+        console.log("adsfadsfafdsadf");
+        var recipientEndpoint = client.getEndpoint({ id: recipientId });
+        console.log(recipientEndpoint);
+        console.log(recipientEndpoint.getPresence());
+//        console.log("Trying to connect. ", activeCal
     // "connect" event fired after successful connection to Respoke
+
     client.listen('connect', function() {
         $("#status").html("Connected to Respoke as \"" + endpointId + "\"");
     });

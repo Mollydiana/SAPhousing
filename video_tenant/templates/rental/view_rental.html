@@ -5,8 +5,13 @@
     <script src="https://cdn.respoke.io/respoke.min.js"></script>
     <script src='{% static "js/chat.js" %}'></script>
     <script src='{% static "js/getTax.js" %}'></script>
+    <script src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+      data-sap-ui-libs="sap.m"
+      data-sap-ui-theme="sap_bluecrystal"></script>
+    <script src='{% static "js/openui5.js" %}'></script>
 {% endblock %}
 {% block content %}
+
 <div class="row">
     <div class="col-md-9">
         <h1>{{ rental.title }}</h1>
@@ -34,6 +39,9 @@
             </div>
     </div>
     <div class="col-md-3">
+        <div class="row">
+        <div id="content-ui"></div>
+        </div>
         <div class="row">
             <div class="panel panel-default">
                <div class="panel-heading">Rental price</div>
