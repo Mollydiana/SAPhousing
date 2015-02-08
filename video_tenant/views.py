@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 # Registration stuff
 from geoposition.forms import GeopositionField
@@ -29,7 +29,8 @@ shows detail rental page
 """
 
 def view_rental(request, rental_id):
-    rental = Rental.objects.get(pk=rental_id)
+    rental = get_object_or_404(Rental, pk=rental_id)
+
     return render(request, 'rental/view_rental.html', {'rental': rental})
 
 """
