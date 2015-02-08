@@ -15,7 +15,7 @@ class Account(AbstractUser):
         (LANDLORD, "landlord"),
         (TENANT, "tenant")
     )
-    user_type = models.IntegerField(choices=TYPE, default=0)
+    user_type = models.IntegerField(choices=TYPE, default=1)
 
     def __unicode__(self):
         return self.username
@@ -24,7 +24,6 @@ class Account(AbstractUser):
 class Rental(models.Model):
     # The address related
     position = GeopositionField()
-    number = models.CharField(max_length=30, blank=True)
     street = models.CharField(max_length=100, blank=True)
     city = models.CharField(max_length=100, blank=True)
     state = models.CharField(max_length=100, blank=True)
@@ -35,10 +34,16 @@ class Rental(models.Model):
     pricing = models.DecimalField(max_digits=6, decimal_places=2)
     title = models.CharField(max_length=100)
     status = models.BooleanField(default=True)
+    description = models.TextField(blank=True, null=True)
 
     # Default showing picture
     default_picture = models.ForeignKey("Picture", related_name="rentals", blank=True, null=True)
 
+    def __unicode__(self):
+        return '{}'.format(self.title)
+
+    def full_address(self):
+        return '{}, {}, {} {}'.format(self.street, self.city, self.state, self.zipcode)
 
 class Picture(models.Model):
     image = models.ImageField(upload_to='media/product_pictures', blank=True, null=True)

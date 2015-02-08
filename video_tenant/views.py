@@ -1,9 +1,19 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 # Registration stuff
 from geoposition.forms import GeopositionField
 from video_tenant.forms import AccountForm, AccountCreationForm
 from video_tenant.models import Rental
+
+"""
+All rentals
+"""
+
+@login_required
+def my_rental(request):
+    all_rentals = Rental.objects.filter(owner=request.user)
+    return render(request, 'rental/all_rentals.html', {'all_rentals': all_rentals})
 
 """
 All rentals
@@ -20,7 +30,7 @@ shows detail rental page
 
 def view_rental(request, rental_id):
     rental = Rental.objects.get(pk=rental_id)
-    return render(request, 'rental/view_rental.html', {'rental':rental})
+    return render(request, 'rental/view_rental.html', {'rental': rental})
 
 """
 Shows the account page

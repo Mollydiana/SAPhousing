@@ -24,7 +24,10 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-        <script src="{% static "js/rentalAPI.js" %}"></script>
+        {# <script src='{% static "js/rentalAPI.js" %}'></script> #}
+
+        {% block extrahead %}
+        {% endblock %}
 	</head>
 	<body>
 
@@ -71,6 +74,42 @@
             <li class="divider"></li>
             <li><a href="#">Separated link</a></li>
           </ul>
+
+            {# ***************************login stuff*************************** #}
+            {% if user.is_authenticated %}
+                <li class="dropdown">
+                    <a aria-expanded="false" href="#" class="dropdown-toggle" data-toggle="dropdown" title="Premium Bootstrap Themes &amp; Templates">
+                        <i class="fa fa-star text-yellow"></i> <span class="respoke-username" id="respoke-{{user.username}}">{{ user.username }}</span> <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        {% if user.user_type == 0 %}
+                            <li>
+                                <a href="{% url 'my_rental' %}">my rentals</a>
+                            </li>
+                            <li class="divider"></li>
+                        {% endif %}
+                        <li>
+                            <a href="{% url 'account' %}">account</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'logout' %}">logout</a>
+                        </li>
+                    </ul>
+                </li>
+            {% else %}
+                <li class="dropdown">
+                    <a aria-expanded="false" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-star text-yellow"></i> Login Options <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{% url 'login' %}">Login</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'register' %}">Register Here</a>
+                        </li>
+                    </ul>
+                </li>
+            {% endif %}
+          {# ***************************login stuff*************************** #}
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
