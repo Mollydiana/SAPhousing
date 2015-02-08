@@ -1,11 +1,18 @@
 {% extends 'base_template.html' %}
 
 {% block content %}
-{% for rental in all_rentals %}
-    <ul>
-        <li><a href="{% url 'view_rental' rental.id %}">{{ rental.title }}</li>
-        <p><img src="{{ rental.default_picture.image.url }}"></p>
-    </ul>
 
+{% for rental in all_rentals %}
+<ul>
+    <div class="row">
+        <div class="col-md-9">
+            <li class="title"><a href="{% url 'view_rental' rental.id %}">{{ rental.title }}
+                <p><img src="{{ rental.default_picture.image.url }}"></p></a></li>
+        </div>
+        <div class="col-md-3">
+            <p>blablablablabla</p>
+        </div>
+    </div>
+                  </ul>
 {% endfor %}
 {% endblock %}

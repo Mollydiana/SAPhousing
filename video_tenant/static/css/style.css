@@ -2,7 +2,6 @@
 @import url(http://fonts.googleapis.com/css?family=Abril+Fatface);
 
 body {
-  background-color:#e0e0e0;
   -webkit-font-smoothing: antialiased;
   font: normal 14px Roboto,arial,sans-serif;
 }
@@ -16,4 +15,16 @@ body {
 
 .navbar-default {
 background-color: #EFED72 !IMPORTANT;
+}
+
+ul li {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    text-align:left;
+}
+.title{
+text-transform:uppercase;
+font-size:28px;
+background-color:lightgrey;
 }
