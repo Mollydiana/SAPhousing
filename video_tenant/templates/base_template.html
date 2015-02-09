@@ -45,12 +45,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Virtual Rental</a>
+      <a class="navbar-brand" href="{% url 'home' %}"><img class="logo" src="{% static 'img/home.png' %}" height="40px"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <li><a href="#">Housey</a></li>
         <li><a href="{% url 'rental' %}">View all Rentals</a></li>
       </ul>
 

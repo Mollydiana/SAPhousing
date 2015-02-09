@@ -9,6 +9,9 @@ from video_tenant.models import Rental
 """
 All rentals
 """
+def home(request):
+    all_rentals = Rental.objects.all()
+    return render(request, 'rental/all_rentals.html', {'all_rentals': all_rentals})
 
 @login_required
 def my_rental(request):

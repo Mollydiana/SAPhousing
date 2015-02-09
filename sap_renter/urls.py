@@ -26,6 +26,7 @@ urlpatterns = patterns('',
     url(r'^rental/$', 'video_tenant.views.rental', name='rental'),
     url(r'^view-rental/(?P<rental_id>\d+)$','video_tenant.views.view_rental', name='view_rental'),
     url(r'^my-rental/$', 'video_tenant.views.my_rental', name='my_rental'),
+    url(r'^$', 'video_tenant.views.home', name='home'),
 )
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

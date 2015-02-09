@@ -5,12 +5,16 @@
 {% for rental in all_rentals %}
 <ul>
     <div class="row">
-        <div class="col-md-9">
-            <li class="title"><a href="{% url 'view_rental' rental.id %}">{{ rental.title }}
-                <p><img src="{{ rental.default_picture.image.url }}"></p></a></li>
+        <div class="content-box">
+        <div class="col-md-8">
+            <li> <div class="title"><a href="{% url 'view_rental' rental.id %}">{{ rental.title }}</a></div></li>
+                <hr>
+            <p><img class="apt-pic"src="{{ rental.default_picture.image.url }}"></p>
         </div>
-        <div class="col-md-3">
-            <p>blablablablabla</p>
+        <div class="col-md-4">
+
+            <p class="detail">Price/month : {{rental.pricing}}$</p>
+        </div>
         </div>
     </div>
                   </ul>

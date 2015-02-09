@@ -70,26 +70,30 @@
     </div>
 </div>
 
-
-
-<h3 id="status">Not Connected</h3>
-    <div id="login">
-        <input id="endpoint" placeholder="Username" type="text" />
-        <button id="doLogin">Connect</button>
-    </div>
-
-    <div>
-        <input id="remoteId" placeholder="User to Call" type="text" />
-        {#<button id="doCall">Call</button>#}
-        <button id="doHangUp">Hang Up</button>
-        <button id="isOnline">Is Online</button>
-
-    </div>
-
-    <!-- The person you're calling -->
+<div class="row">
+    <h3 id="status">Not Connected</h3>
+     <!-- The person you're calling -->
     <div id="remoteVideoSource"></div>
 
     <!-- You -->
     <div id="localVideoSource"></div>
+    <button id="doHangUp">Hang Up</button>
+</div>
+
+{# <h3 id="status">Not Connected</h3> #}
+{#     <div id="login">#}
+{#         <input id="endpoint" placeholder="Username" type="text" />#}
+{#         <button id="doLogin">Connect</button>#}
+{#    </div>#}
+
+    <!--<div>-->
+        <!--<input id="remoteId" placeholder="User to Call" type="text" />-->
+        <!--{#<button id="doCall">Call</button>#}-->
+        <!--<button id="doHangUp">Hang Up</button>-->
+        <!--<button id="isOnline">Is Online</button>-->
+
+    <!--</div>-->
+
+
 
 {% endblock %}
